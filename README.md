@@ -21,11 +21,13 @@ On this point in local project, we already have:
 Over Time Public repo you forked your copy of working directory changes. To copy changes, an upstream is created and pulled into local working directory. And Pushed to Origin.
 * `git remote add upstream url-Public-repo`
 > Merge confilcts can happen when we pull or do a fetch. Which means editing the proposed 
-changes and desired changes. Next steps can be done in two ways using pull or fetch/rebase
-` git pull upstream master`
+changes and desired changes. Next steps can be done in two ways using pull or fetch/rebase.
 
-or 
- ```$ git fetch upstream
+* ` git pull upstream master`
+
+or antoher way  to pull from original project is like: 
+ ```
+ $ git fetch upstream
  $ git rebase upstream/master
  $ git push origin master
  ```
