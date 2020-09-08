@@ -1,3 +1,9 @@
+# Introduction
+
+Working with git github and open source is not so easy for begineers. I have spent a lot of time to read tutorials and git commands but didnot learn enough.
+
+Now, I am confident I need more practice like to create my own solutions, automated scripts and learn more by doing a lot of projects by recreating the device to practice more and more.
+
 # How git fetch works
 
 To understand how git fetch works we have to talk about how git organizes and stores commits. Behind scenes, in the ropository's `./.git/objects/` directory. All commits from local or remote branches are kept safely there,seperated through use of branch refs. Local branches inside ./.git/refs/heads and remote branches inside `./.git/refs/`remotes. We can see that if we type `$ git branch` or `$ git branch -r`. The same output as we type `ls ./.git/refs/heads/`
@@ -90,10 +96,18 @@ On this point in local project, we already have:
 or another way to pull from original project is like: ![add upstream snapshot](/images/addUpstream.png)
 
 ```
-$ git fetch upstream
+$ git fetch upstream/origin/<any remote branch>  // So the branch is downloaded
+$ git checkout master  // head to master or branch
+or
+$ git checkout -b feature_branch
+Finally merge the <remote> to <master>
+$ git merge origin/master
+
 $ git rebase upstream/master
 $ git push origin master
 ```
+
+Alternative to fetch is rebase which rewrites the commit history. So with fetch we have fetch>checkout>merge cycle to be remembered.
 
 [How to Sync your fork with Public repo](https://github.com/firstcontributions/first-contributions/blob/master/additional-material/git_workflow_scenarios/keeping-your-fork-synced-with-this-repository.md)
 
@@ -115,8 +129,10 @@ $ git push origin master
 - SVN is central tracking with remote has original copy while git is distributed control
   system with copies with local and remote.
 
-[Reference to first-contributions](https://github.com/firstcontributions/first-contributions/blob/master/additional-material/git_workflow_scenarios/additional-material.md)
-[why-should-i-use-git-instead-of-svn](https://stackoverflow.com/questions/740053/why-should-i-use-git-instead-of-svn)
-[git magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/book.html)
-[git ready](http://gitready.com/)
+### References:
+
+[Reference to first-contributions](https://github.com/firstcontributions/first-contributions/blob/master/additional-material/git_workflow_scenarios/additional-material.md)  
+[why-should-i-use-git-instead-of-svn](https://stackoverflow.com/questions/740053/why-should-i-use-git-instead-of-svn) \
+[git magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/book.html) \
+[git ready](http://gitready.com/) \
 [Merging and rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
