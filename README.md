@@ -10,6 +10,7 @@
 * Compare Local branch and Public repo master branch 
 * New Pull Request.
 > If maintainer of Public repo likes the changes He/She merges.
+![Pull Request snapshot](/images/PullReq.png)
 [How to make Pull Request i.e. make changes to merge with public repo](https://github.com/firstcontributions/first-contributions)
 
 # Sync your local working copy of repo with Public Repo
@@ -25,12 +26,13 @@ changes and desired changes. Next steps can be done in two ways using pull or fe
 
 * ` git pull upstream master`
 
-or another way  to pull from original project is like: 
+or another way  to pull from original project is like: ![add upstream snapshot](/images/addUpstream.png)
  ```
  $ git fetch upstream
  $ git rebase upstream/master
  $ git push origin master
  ```
+ 
 [How to Sync your fork with Public repo](https://github.com/firstcontributions/first-contributions/blob/master/additional-material/git_workflow_scenarios/keeping-your-fork-synced-with-this-repository.md)
 # Common Workflows
  
