@@ -1,5 +1,5 @@
 # Merge conflicts
-When we want to move changes from one branch to another, we use the git mergecommand. Depending on the history of our commits, we can merge two different ways:
+When we want to move changes from one branch to another, we use the git merge command. Depending on the history of our commits, we can merge two different ways:
 
 1. Fast forward:  In fast forward merge, which is when git can easily tell when the commits happened and "put" one set of commits on top of another chronologically.
 2. Recursive: When different commits happen at different times on two branches, and git can not easily determine what order these commits happened in, a recursive merge needs to happen. 
