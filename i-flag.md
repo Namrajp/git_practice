@@ -1,4 +1,4 @@
-# Differenct Flags :flower: 
+# Different Flags :floppy_disk: 
 
 ## -i flag :rainbow:
 
