@@ -128,6 +128,9 @@ Alternative to fetch is rebase which rewrites the commit history. So with fetch 
   by tracking multiple files and folders.
 - SVN is central tracking with remote has original copy while git is distributed control
   system with copies with local and remote.
+  [Feature Branching Workflow] (https://gist.github.com/blackfalcon/8428401) This gist on git workflow, provides
+  easy to follow guide for a project which explains git branching, checking out to remote branches, git pull while staying current to master or root
+  directory so that staying sync with github repo makes creating features on team projects fun. Rebasing is also explained well along with alias in bash_profile. 
 
 ### References:
 
