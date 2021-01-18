@@ -136,6 +136,15 @@ Alternative to fetch is rebase which rewrites the commit history. So with fetch 
 - [Feature Branching Workflow](https://gist.github.com/blackfalcon/8428401) This gist on git workflow, provides
   easy to follow guide for a project which explains git branching, checking out to remote branches, git pull while staying current to master or root
   directory so that staying sync with github repo makes creating features on team projects fun. Rebasing is also explained well along with alias in bash_profile. 
+- To rebase your local feature branch off of the latest version of master, following these steps will be a guarantee every time.
+
+```$ git checkout master         /* ensure you are on the master branch
+   $ git pull                                   /* pull the latest from the remote 
+   $ git checkout my-feature-branch      /* checkout the feature branch
+   $ git push origin my-feature-branch  /* update your copy in the repo
+   $ git rebase master              /* rebase on the master branch
+   $ git push origin my-feature-branch --force   /* force update the remote
+```
 
 ### References:
 
