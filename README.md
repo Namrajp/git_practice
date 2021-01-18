@@ -113,16 +113,21 @@ Alternative to fetch is rebase which rewrites the commit history. So with fetch 
 
 # Common Workflows
 
-- Pull Request (Fork > Clone > Edit > PR)
-- Sync and Develop (Fork > Clone > remote add UPSTREAM > fetch/Rebase > Push to origin)
-- Branching git checkout -b new-branch creates and move to new branch. git branch -D branch to delete.
-- Merge conflicts (Editing the file and git add file and commit)
+- Pull Request `(Fork > Clone > Checkout Branch + Edit > Push to Remote repo = PR)`
+- Sync and Develop `(Fork > Clone > git remote add UPSTREAM > fetch/Rebase > Push to origin)`
+- Branching commands `git checkout -b new-branch` creates and move to new branch. `git branch -D branch` to delete.
+- Merge conflicts (Editing the file from similar duplicate code sections to select one section and 
+  remove any git `<--Code changes on first section->>` like syntax before doing `git add fileName` and rebase or abort,
+  `$ git rebase --continue or --abort`
 - `$ git reset --hard to undo changes to last commit`
 - `$ git reset --hard HEAD~2` This command Moves the current branch backward by 2 commits,while
 - `git revert 389004d` is used to reverse a commit to a sha or undo a commit that has already been pushed to Github.
   [Undo a commit](https://github.com/firstcontributions/first-contributions/blob/master/additional-material/git_workflow_scenarios/undoing-a-commit.md)
 - Stashing works with working directory which is saving its state while commit is saving
-  changed state of the project.
+  changed state of the project. To apply stash `$ git stash apply` or to list stack of stash `$ git stash list`.
+- Sometimes a project wouldnot be pushed to remote origin because of recent changes, if you want to push and not ready to commmit just do, `$ git stash`.
+  and sometimes you cannot push to remote, it happens when we pull the changes in remote to any feature branch, so to avoid this always make sure you are 
+  in master branch before a pull . so `$ git checkout master` followed by `$ git pull` or `$ git pull upstream master` 
 - Saving a file in wordprocessing is similar to git Commit. Overwrite single file is saving
   a file in word processing while commit in git is about saving different states of a project
   by tracking multiple files and folders.
