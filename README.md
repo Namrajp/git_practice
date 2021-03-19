@@ -7,9 +7,14 @@ Now, I am confident I need more practice like to create my own solutions, automa
 `git init`
 
 ### Checkout a Repo
+<<<<<<< HEAD
 Create a working copy of a local repo without server and Using a remote Server
 `git clone /path/toRepo` 
 `git clone username@host:/path/toRepo` 
+=======
+`git clone /path/toRepo` create a working copy of a local repo
+`git clone username@host:/path/toRepo` Using a remote Server
+>>>>>>> bd7d5227235afab9d4d1e7c73c496d6cd9dbba40
 
 # How git fetch works
 
