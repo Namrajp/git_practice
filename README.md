@@ -3,6 +3,12 @@
 Working with git github and open source is not so easy for begineers. I have spent a lot of time to read tutorials and git commands but didnot learn enough.
 
 Now, I am confident I need more practice like to create my own solutions, automated scripts and learn more by doing a lot of projects by recreating the device to practice more and more.
+### Create a new Repository
+`git init`
+
+### Checkout a Repo
+`git clone /path/toRepo` create a working copy of a local repo
+`git clone username@host:/path/toRepo` Using a remote Server
 
 # How git fetch works
 
