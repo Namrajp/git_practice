@@ -14,25 +14,14 @@ Git commit is nothing but a state of our files. Like saving a file after typing 
 ### Create a new Repository
 `git init`
 
-### Checkout a Repo
+### Checkout a Repo and update the copy of project
 Create a working copy of a local repo without server and Using a remote Server
 `git clone /path/toRepo` 
-`git clone username@host:/path/toRepo` 
+`git clone username@host:/path/toRepo`. 
 
-# How git fetch works
+After a While if we want to download the updates we need to pull code
+`$git pull`
 
-To understand how git fetch works we have to talk about how git organizes and stores commits. Behind scenes, in the ropository's `./.git/objects/` directory. All commits from local or remote branches are kept safely there,seperated through use of branch refs. Local branches inside ./.git/refs/heads and remote branches inside `./.git/refs/`remotes. We can see that if we type `$ git branch` or `$ git branch -r`. The same output as we type `ls ./.git/refs/heads/`.
-
-## Git fetch commands and options
-
-```git
-git fetch upstream
-git fetch <remote>
-git fetch <remote> <branch>
-git fetch --dry-run
-```
-
---dry-run option to perform a demo run ,fetch will not apply but example of output can be seen.
 
 # Resetting, Checking Out and Reverting
 
@@ -42,10 +31,11 @@ These commands combines to affect out working directory, cached snapshots and co
 
 On our working directory if we have changed files and committed few times and if you just want to go back just because something is wrong, so git reset is the way to restore the state to a given commit and erase all newer commits permanently.
 
-```git
- $ git reset --hard
- $ git reset --hard 766f
-```
+If we are just starting and make changes to few files, but didnot commit and want to discard changes then `reset --hard` can reset to the last commit.
+ ```$ git reset --hard```
+ Permanently wipe the newer changes, and go back steps to a stable state
+ ```$ git reset --hard 766f```
+
 
 ## Checking Out
 
@@ -77,6 +67,20 @@ $ git diff 1b6d "master~2"
 $ git whatchanged --since="2 weeks ago"
 ```
 
+# How git fetch works
+
+To understand how git fetch works we have to talk about how git organizes and stores commits. Behind scenes, in the ropository's `./.git/objects/` directory. All commits from local or remote branches are kept safely there,seperated through use of branch refs. Local branches inside ./.git/refs/heads and remote branches inside `./.git/refs/`remotes. We can see that if we type `$ git branch` or `$ git branch -r`. The same output as we type `ls ./.git/refs/heads/`.
+
+## Git fetch commands and options
+
+```git
+git fetch upstream
+git fetch <remote>
+git fetch <remote> <branch>
+git fetch --dry-run
+```
+
+--dry-run option to perform a demo run ,fetch will not apply but example of output can be seen.
 # Pull Request
 
 Fork > Clone > New branch > Make Changes > Push branch to Origin > Compare & Pull Req.
