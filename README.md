@@ -171,8 +171,8 @@ Alternative to fetch is rebase which rewrites the commit history. So with fetch 
 [why-should-i-use-git-instead-of-svn](https://stackoverflow.com/questions/740053/why-should-i-use-git-instead-of-svn) \
 [git magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/book.html) \
 [git ready](http://gitready.com/) \
-[Merging and rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
-[Think like a git](http://think-like-a-git.net/)
+[Merging and rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing).  
+[Think like a git](http://think-like-a-git.net/)  
 [Merge-conflicts](./merge-conflicts.md)
 
 [Different flags with important usage Git rebasea and EC2 AWS server connection](./i-flag.md)
