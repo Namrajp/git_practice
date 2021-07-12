@@ -1,8 +1,16 @@
 # Introduction
 
-Working with git github and open source is not so easy for begineers. I have spent a lot of time to read tutorials and git commands but didnot learn enough.
-
-Now, I am confident I need more practice like to create my own solutions, automated scripts and learn more by doing a lot of projects by recreating the device to practice more and more.
+Git commit is nothing but a state of our files. Like saving a file after typing a document. What if we update after saving, we lose the state we saved our files last time. If we did a commit, we could go back after saving second time update. 
+`$ git checkout k32k`  
+- We can commit using `$ git commit -a -m 'Commit message' ` which skips a step of staging. Well staging is a temporary step, to decide, go back or forward. 
+- We can always go back the git tree using previous `checkout` command and
+ `$ git reset --hard` if files are not commited
+ `$ git reset --hard 2de2` if files are commited but this step deletes all later commits,
+ - `$ git checkout k32k` as seen before is safer that lets return to recent commit using `$ git checkout master`.
+ 
+### Remove files from staging 
+`$ git rm --cached * ` remove all files added by `$ git add .`
+`$ git rm --cached name-of-file.md` for single file.
 ### Create a new Repository
 `git init`
 
@@ -13,7 +21,7 @@ Create a working copy of a local repo without server and Using a remote Server
 
 # How git fetch works
 
-To understand how git fetch works we have to talk about how git organizes and stores commits. Behind scenes, in the ropository's `./.git/objects/` directory. All commits from local or remote branches are kept safely there,seperated through use of branch refs. Local branches inside ./.git/refs/heads and remote branches inside `./.git/refs/`remotes. We can see that if we type `$ git branch` or `$ git branch -r`. The same output as we type `ls ./.git/refs/heads/`
+To understand how git fetch works we have to talk about how git organizes and stores commits. Behind scenes, in the ropository's `./.git/objects/` directory. All commits from local or remote branches are kept safely there,seperated through use of branch refs. Local branches inside ./.git/refs/heads and remote branches inside `./.git/refs/`remotes. We can see that if we type `$ git branch` or `$ git branch -r`. The same output as we type `ls ./.git/refs/heads/`.
 
 ## Git fetch commands and options
 
