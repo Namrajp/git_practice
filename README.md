@@ -2,7 +2,8 @@
 
 Git commit is nothing but a state of our files. Like saving a file after typing a document. What if we update after saving, we lose the state we saved our files last time. If we did a commit, we could go back after saving second time update. 
 `$ git checkout k32k`  
-- We can commit using `$ git commit -a -m 'Commit message' ` which skips a step of staging. Well staging is a temporary step, to decide, go back or forward. 
+- When we make a commit, it is stored with a name that provides reference to that commit, k32k in our example is that name called _sha_.
+- We can commit using `$ git commit -a -m 'Commit message' ` or `$git commit -a` which skips a step of staging. Well staging is a temporary step, to decide, go back or forward. 
 - We can always go back the git tree using previous `checkout` command and
  `$ git reset --hard` if files are not commited
  `$ git reset --hard 2de2` if files are commited but this step deletes all later commits,
@@ -69,7 +70,23 @@ $ git whatchanged --since="2 weeks ago"
 
 # How git fetch works
 
-To understand how git fetch works we have to talk about how git organizes and stores commits. Behind scenes, in the ropository's `./.git/objects/` directory. All commits from local or remote branches are kept safely there,seperated through use of branch refs. Local branches inside ./.git/refs/heads and remote branches inside `./.git/refs/`remotes. We can see that if we type `$ git branch` or `$ git branch -r`. The same output as we type `ls ./.git/refs/heads/`.
+To understand how git fetch works we have to talk about how git organizes and stores commits. Behind scenes, in the ropository's `./.git/objects/` directory. All commits from local or remote branches are kept safely there,seperated through use of branch refs. Local branches inside `./.git/refs/heads` directory and remote branches inside `./.git/refs/remotes` directory . We can see that if we type `$ git branch` or `$ git branch -r`. The same output as we type `ls ./.git/refs/heads` or `ls ./.git/refs/remotes`.
+Git fetch is used to download files from remote repository from other person. We need a link to their remote repo. That link is added with 
+- `$ git remote add origin remote_url_of_other_person` 
+- `$ git fetch origin master`
+- `$ git merge` 
+- Conflicts can occur, we resolve that in our text editor by removing unwanted changes, and make another
+ commit. We make another commit if we remove a commit using ` $ git revert` .
+ 
+### Origin is a shortname for remote repository
+Our remote repository on github has a name like awesome_Project, proj_xyz and if we want to connect to our remote repo we need a URL of our remote repo. So, instead of typing URL we give it a name, that is origin, we can give any other names.
+- `$ git remote add origin URL_remote_awesome_Project`
+- `$ git remote add origin URL_remote_OpenSource_Proj`
+- - `$ git remote add upstream URL_remote_OpenSource_Proj`
+Git stores seperate origin for each of different remote repository.
+
+## Pull is alternative that combines fetch and merge.
+- `$ git pull`
 
 ## Git fetch commands and options
 
@@ -77,10 +94,11 @@ To understand how git fetch works we have to talk about how git organizes and st
 git fetch upstream
 git fetch <remote>
 git fetch <remote> <branch>
-git fetch --dry-run
+git fetch --dry-run 
 ```
 
 --dry-run option to perform a demo run ,fetch will not apply but example of output can be seen.
+
 # Pull Request
 
 Fork > Clone > New branch > Make Changes > Push branch to Origin > Compare & Pull Req.
