@@ -46,11 +46,12 @@ This takes us back in commit history,while newer changes are preserved.Like Sci-
 $ git checkout 82f5
 $ git checkout master
 ```
-
-we can choose only to restore particular files and subdirectories by appending them after the command
-$ git checkout 82f5 some.file another.file
-$ git checkout :/"My first b"
-\$ git checkout master~5
+#### Files
+We can choose only to restore particular files and subdirectories by appending them after the command
+`$ git checkout 82f5 some.file another.file`
+#### Select by Commit Meessage and a number of commits back using `master~number`
+`$ git checkout :/"My first b"`
+`$ git checkout master~5`
 
 ## Reverting
 
@@ -72,7 +73,7 @@ $ git whatchanged --since="2 weeks ago"
 
 To understand how git fetch works we have to talk about how git organizes and stores commits. Behind scenes, in the ropository's `./.git/objects/` directory. All commits from local or remote branches are kept safely there,seperated through use of branch refs. Local branches inside `./.git/refs/heads` directory and remote branches inside `./.git/refs/remotes` directory . We can see that if we type `$ git branch` or `$ git branch -r`. The same output as we type `ls ./.git/refs/heads` or `ls ./.git/refs/remotes`.
 Git fetch is used to download files from remote repository from other person. We need a link to their remote repo. That link is added with 
-- `$ git remote add origin remote_url_of_other_person` 
+- `$ git remote add origin remote_url_of_other_person` add a reference to remote repo to download or upload as origin
 - `$ git fetch origin master`
 - `$ git merge` 
 - Conflicts can occur, we resolve that in our text editor by removing unwanted changes, and make another
