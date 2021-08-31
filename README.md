@@ -13,15 +13,17 @@ Git commit is nothing but a state of our files. Like saving a file after typing 
 `$ git rm --cached * ` remove all files added by `$ git add .`
 `$ git rm --cached name-of-file.md` for single file.
 ### Create a new Repository
-`git init`
+`git init` will create a git repository on local machine on a new project.
+`git clone` will download remote repo on local machine. It creates a default link to remote repo called origin.Create a working copy of a local repo without server and Using a remote Server
+`git clone /path/toRepo` 
+`git clone username@host:/path/toRepo`. After a While if we want to download the updates we need to pull code
+`$git pull` or `git pull --rebase` if pull and if fetch `git fetch upstream` and `git merge REMOTE_BRANCH`.
 
 ### Checkout a Repo and update the copy of project
-Create a working copy of a local repo without server and Using a remote Server
-`git clone /path/toRepo` 
-`git clone username@host:/path/toRepo`. 
+`git checkout -- file.txt` Undo changes to a file on working directory.Non-reversible/ cannot be undone.
+`git reset --hard HEAD` Undo changes to staging and local directory. Non-reversible/ cannot be undone.
 
-After a While if we want to download the updates we need to pull code
-`$git pull`
+
 
 
 # Resetting, Checking Out and Reverting
@@ -44,7 +46,7 @@ This takes us back in commit history,while newer changes are preserved.Like Sci-
 
 ```
 $ git checkout 82f5
-$ git checkout master
+$ git checkout master~  ### LAST COMMIT
 ```
 #### Files
 We can choose only to restore particular files and subdirectories by appending them after the command
@@ -63,7 +65,7 @@ git revert will undo just the commit with the given hash. The revert is recorded
 ```
 $ git log
 
-$ git diff
+$ git diff 
 $ git diff "@{yesterday}
 $ git diff 1b6d "master~2"
 $ git whatchanged --since="2 weeks ago"
