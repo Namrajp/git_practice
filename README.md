@@ -8,6 +8,8 @@ Git commit is nothing but a state of our files. Like saving a file after typing 
  `$ git reset --hard` if files are not commited
  `$ git reset --hard 2de2` if files are commited but this step deletes all later commits,
  - `$ git checkout k32k` as seen before is safer that lets return to recent commit using `$ git checkout master`.
+ - Set up upstream if git push fails with fatal error. `fatal: The current branch gh-pages has no upstream branch.`
+ `git push --set-upstream origin gh-pages`  
  
 ### Remove files from staging 
 `$ git rm --cached * ` remove all files added by `$ git add .`
