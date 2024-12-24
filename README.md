@@ -1,5 +1,15 @@
 # Introduction
 
+### Create a new Repository
+`git init` will create a git repository on local machine on a new project.
+`git clone` will download remote repo on local machine. It creates a default link to remote repo called origin.Create a working copy of a local repo without server and Using a remote Server
+`git clone /path/toRepo` 
+`git clone username@host:/path/toRepo`. After a While if we want to download the updates we need to pull code
+`$git pull` or `git pull --rebase` if pull and if fetch `git fetch upstream` and `git merge REMOTE_BRANCH`.
+
+# What is Commit? 
+Likewise committed to a relationship, or being committed to a set task completion its similar meaning in world of History making in Git.
+
 Git commit is nothing but a state of our files. Like saving a file after typing a document. What if we update after saving, we lose the state we saved our files last time. If we did a commit, we could go back after saving second time update. 
 `$ git checkout k32k`  
 - When we make a commit, it is stored with a name that provides reference to that commit, k32k in our example is that name called _sha_.
@@ -11,27 +21,18 @@ Git commit is nothing but a state of our files. Like saving a file after typing 
  - Set up upstream if git push fails with fatal error. `fatal: The current branch gh-pages has no upstream branch.`
  `git push --set-upstream origin gh-pages`  
  
-### Remove files from staging 
-`$ git rm --cached * ` remove all files added by `$ git add .`
-`$ git rm --cached name-of-file.md` for single file.
-### Create a new Repository
-`git init` will create a git repository on local machine on a new project.
-`git clone` will download remote repo on local machine. It creates a default link to remote repo called origin.Create a working copy of a local repo without server and Using a remote Server
-`git clone /path/toRepo` 
-`git clone username@host:/path/toRepo`. After a While if we want to download the updates we need to pull code
-`$git pull` or `git pull --rebase` if pull and if fetch `git fetch upstream` and `git merge REMOTE_BRANCH`.
-
-### Checkout a Repo and update the copy of project
-`git checkout -- file.txt` Undo changes to a file on working directory.Non-reversible/ cannot be undone.
-`git reset --hard HEAD` Undo changes to staging and local directory. Non-reversible/ cannot be undone.
-
-
-
-
 # Resetting, Checking Out and Reverting
 
 These commands combines to affect out working directory, cached snapshots and commit history.
 
+## Checking Out
+
+This takes us back in commit history,while newer changes are preserved.Like Sci-fiction movie, if you edit and commit, you will be in new reality, a new branch.
+
+```
+$ git checkout 82f5
+$ git checkout master~  ### LAST COMMIT
+```
 ## Resetting
 
 On our working directory if we have changed files and committed few times and if you just want to go back just because something is wrong, so git reset is the way to restore the state to a given commit and erase all newer commits permanently.
@@ -42,14 +43,10 @@ If we are just starting and make changes to few files, but didnot commit and wan
  ```$ git reset --hard 766f```
 
 
-## Checking Out
+### Remove files from staging 
+`$ git rm --cached * ` remove all files added by `$ git add .`
+`$ git rm --cached name-of-file.md` for single file.
 
-This takes us back in commit history,while newer changes are preserved.Like Sci-fiction movie, if you edit and commit, you will be in new reality, a new branch.
-
-```
-$ git checkout 82f5
-$ git checkout master~  ### LAST COMMIT
-```
 #### Files
 We can choose only to restore particular files and subdirectories by appending them after the command
 `$ git checkout 82f5 some.file another.file`
