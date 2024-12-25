@@ -10,10 +10,10 @@
 # What is Commit? 
 Likewise committed to a relationship, or being committed to a set task completion its similar meaning in world of History making in Git.
 Some Basic Commands are 
-git add .   ----- add files desired dot can be replaced with filename or filenames.
-git status  ----- state of the files
-git commit -m "Message to save" --- saving changes to source control
-git log ----- Showing the saved messages and overall project state.
+- git add .   ----- add files desired dot can be replaced with filename or filenames.
+- git status  ----- state of the files
+- git commit -m "Message to save" --- saving changes to source control
+- git log ----- Showing the saved messages and overall project state.   
 
 There are other variations of these basic commands using flages like -- no log --online -a etc.
 
