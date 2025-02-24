@@ -49,6 +49,13 @@ If we are just starting and make changes to few files, but didnot commit and wan
  Permanently wipe the newer changes, and go back steps to a stable state
  ```$ git reset --hard 766f```
 
+#### Recovering deleted files not commited
+Yesterday I started to use git repository on cPrograms folder with some files. I did `$ git init` and afterwards thought I need to organize my files into folders so
+I wanted to get rid of git init. Obvious, options are to delete a .git repository but I thought of git reset command would do it and tried
+`git reset --hard`. To my surprise, I lost all files when I tried to open that folder in vscode.Upon search online, I found this [Recovering deleted files not commited](https://stackoverflow.com/questions/12434618/can-deleted-files-that-are-added-but-not-committed-in-git-be-recovered) link and commands
+`git fsck --lost-found` and `git cat-file -p SHA1` found git writes all dangling objects into the .git/lost-found/commit/ or .git/lost-found/other/ folders. So relieved!! that I 
+can recover all files using sha1 of filenames of blob that I had to recoved all files manually.
+
 
 ### Remove files from staging 
 `$ git rm --cached * ` remove all files added by `$ git add .`
